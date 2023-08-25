@@ -1,9 +1,9 @@
 import { Card, Col, Row, Typography } from "antd";
-import workspace from "../../assets/images/workspace.jpg";
-import summer from "../../assets/images/summer.jpg";
-import gravity from "../../assets/images/gravity.jpg";
-import city from "../../assets/images/city.jpg";
-import food from "../../assets/images/food.jpg";
+import workspace from "../../../assets/images/workspace.jpg";
+import summer from "../../../assets/images/summer.jpg";
+import gravity from "../../../assets/images/gravity.jpg";
+import city from "../../../assets/images/city.jpg";
+import food from "../../../assets/images/food.jpg";
 import "./Category.css";
 
 const Category = () => {

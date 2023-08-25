@@ -1,7 +1,7 @@
 import React from "react";
-import Category from "./Category";
-import Gallery from "./Gallery";
+import Category from "./Category/Category";
 import "./Content.css";
+import Gallery from "./Gallery/Gallery";
 
 const Content = () => {
   return (

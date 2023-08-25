@@ -132,7 +132,8 @@ const Header = () => {
             Join free
           </Button>
         </Space>
-
+          
+        {/* mobile menu  */}
         <div className="menu-icon">
           <MenuOutlined
             style={{ color: "black", fontSize: 20 }}
