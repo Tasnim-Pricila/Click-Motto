@@ -11,8 +11,7 @@ const Banner = () => {
           justifyContent: "center",
           alignItems: "flex-start",
           padding: "0 350px",
-          height: "100%",
-          border: "2px solid red",
+          height: "100%"
         }}
       >
         <Typography.Title style={{ color: "white", marginTop: 0 }}>
