@@ -1,32 +1,37 @@
 import { Card, Col, Row, Typography } from "antd";
+import workspace from "../../assets/images/workspace.jpg";
+import summer from "../../assets/images/summer.jpg";
+import gravity from "../../assets/images/gravity.jpg";
+import city from "../../assets/images/city.jpg";
+import food from "../../assets/images/food.jpg";
 import "./Category.css";
 
 const Category = () => {
   const categoryData = [
     {
-      image: "skyblue",
+      image: workspace,
       title: "Workspace",
     },
     {
-      image: "skyblue",
+      image: summer,
       title: "Summer",
     },
     {
-      image: "skyblue",
+      image: city,
       title: "City",
     },
     {
-      image: "skyblue",
+      image: food,
       title: "Food",
     },
     {
-      image: "skyblue",
+      image: gravity,
       title: "Gravity",
     },
   ];
   return (
     <div>
-      <Typography.Title level={5} style={{ marginTop: 0, fontWeight: "bold"}}>
+      <Typography.Title level={5} style={{ marginTop: 0, fontWeight: "bold" }}>
         Top Categories
       </Typography.Title>
       <Row
@@ -34,23 +39,30 @@ const Category = () => {
           xs: 8,
           sm: 16,
         }}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "auto auto auto auto auto",
-        }}
+        className="category-container"
       >
         {categoryData.map((category) => (
           <Col>
             <Card
               bordered={false}
-              style={{ background: "skyblue", height: "15vh" }}
+              hoverable
+              style={{
+                marginBottom: "10px",
+              }}
             >
               <Typography
                 style={{
-                  height: "15vh",
+                  height: "17vh",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  background: `url(${category.image}) , rgb(93 77 77 / 77%)`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  color: "white",
+                  fontWeight: "bold",
+                  backgroundBlendMode: "overlay",
+                  fontSize: "16px",
                 }}
               >
                 {category.title}

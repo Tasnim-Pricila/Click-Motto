@@ -1,17 +1,11 @@
 import React from "react";
 import Category from "./Category";
 import Gallery from "./Gallery";
+import "./Content.css";
 
 const Content = () => {
   return (
-    <div
-      style={{
-        margin: "0 150px",
-        marginTop: "-100px",
-        background: "white",
-        padding: "10px 20px"
-      }}
-    >
+    <div className="content-container">
       <Category />
       <Gallery />
     </div>

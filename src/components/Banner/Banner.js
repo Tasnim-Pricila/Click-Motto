@@ -1,24 +1,16 @@
 import { SearchOutlined } from "@ant-design/icons";
 import { Input, Typography } from "antd";
+import "./Banner.css";
 
 const Banner = () => {
   return (
-    <div style={{ background: "black", height: "85vh", margin: "0 50px" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "flex-start",
-          padding: "0 350px",
-          height: "100%"
-        }}
-      >
-        <Typography.Title style={{ color: "white", marginTop: 0 }}>
+    <div className="banner-container">
+      <div className="banner-content">
+        <Typography className="title" style={{ color: "white", marginTop: 0 }}>
           Your local source of high quality images and videos directly from
           their creators
-        </Typography.Title>
-        <div style={{width: "100%"}}>
+        </Typography>
+        <div style={{ width: "100%" }}>
           <Input
             size="large"
             style={{
@@ -26,7 +18,7 @@ const Banner = () => {
               padding: "10px 20px",
             }}
             placeholder="Search photos and videos"
-            suffix={<SearchOutlined style={{fontSize: "20px"}} />}
+            suffix={<SearchOutlined style={{ fontSize: "20px" }} />}
           />
         </div>
 

@@ -1,5 +1,9 @@
-import { Button, Dropdown, Image, Typography } from "antd";
-import { CaretDownOutlined } from "@ant-design/icons";
+import { Avatar, Button, Dropdown, Typography } from "antd";
+import {
+  CaretDownOutlined,
+  HeartFilled,
+  PlusOutlined,
+} from "@ant-design/icons";
 import four from "../../assets/images/pexels-denitsa-kireva-17868067.jpg";
 import two from "../../assets/images/pexels-furkanfdemir-12181246.jpg";
 import one from "../../assets/images/pexels-nezrin-16457738.jpg";
@@ -15,6 +19,9 @@ import twelve from "../../assets/videos/pexels-bruno-cervera-11649326 (2160p).mp
 import thirteen from "../../assets/images/thirteen.jpg";
 import fourteen from "../../assets/images/fourteen.jpg";
 import fifteen from "../../assets/images/fifteen.jpg";
+import user from "../../assets/images/user.jpg";
+import { FaDownload } from "react-icons/fa";
+import "./Gallery.css";
 
 const Gallery = () => {
   const items = [
@@ -86,7 +93,7 @@ const Gallery = () => {
 
   return (
     <div>
-      <div
+      <div className="gallery-menu"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -94,12 +101,12 @@ const Gallery = () => {
           marginTop: "10px",
         }}
       >
-        <div style={{ display: "flex", gap: "10px" }}>
-          <Typography>All</Typography>
-          <Typography>Photos</Typography>
-          <Typography>Videos</Typography>
-          <Typography>Freebies</Typography>
-          <Typography>360</Typography>
+        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+          <Typography style={{fontWeight: "bold"}}>All</Typography>
+          <Typography style={{color: "gray", fontWeight: "bold"}}>Photos</Typography>
+          <Typography style={{color: "gray", fontWeight: "bold"}}>Videos</Typography>
+          <Typography style={{color: "gray", fontWeight: "bold"}}>Freebies</Typography>
+          <Typography style={{color: "gray", fontWeight: "bold"}}>360</Typography>
         </div>
         <Dropdown menu={{ items }} placement="bottomRight">
           <Button>
@@ -108,30 +115,62 @@ const Gallery = () => {
         </Dropdown>
       </div>
 
-      <div style={{ paddingBottom: "10px", columnCount: 3, columnGap: "10px" }}>
+      <div className="gallery-container">
         {mediaArray.map((media) => (
-          <div className="image-container">
-            {media.type === "image" ? (
-              <img
-                width="100%"
-                src={media.name}
-                alt={media.name}
-                style={{ marginTop: "10px" }}
+          <>
+            <div className="image-container">
+              {media.type === "image" ? (
+                <img width="100%" src={media.name} alt={media.name} />
+              ) : (
+                media.type === "video" && (
+                  <video src={media.name} width="100%" controls></video>
+                )
+              )}
+              <div className="top-item">
+                <HeartFilled
+                  style={{
+                    color: "gray",
+                    padding: "5px",
+                    fontSize: "12px",
+                    borderRadius: "50%",
+                    backgroundColor: "rgb(199 195 195)",
+                    border: "none",
+                  }}
+                />
+                <PlusOutlined
+                  style={{
+                    color: "gray",
+                    padding: "5px",
+                    fontSize: "12px",
+                    borderRadius: "50%",
+                    backgroundColor: "rgb(199 195 195)",
+                    border: "none",
+                    fontWeight: "bold",
+                  }}
+                />
+              </div>
+              <Avatar
+                src={user}
+                className="bottom-left-item"
+                size="small"
+                style={{
+                  backgroundColor: "#87d068",
+                  border: "none",
+                }}
               />
-            ) : (
-              media.type === "video" && (
-                <video
-                  src={media.name}
-                  width="100%"
-                  controls
-                  style={{ marginTop: "10px" }}
-                ></video>
-              )
-            )}
-            <div>
-                
+              <FaDownload
+                className="bottom-right-item"
+                style={{
+                  backgroundColor: "green",
+                  border: "none",
+                  color: "white",
+                  padding: "5px",
+                  fontSize: "14px",
+                  borderRadius: "50%",
+                }}
+              />
             </div>
-          </div>
+          </>
         ))}
       </div>
     </div>

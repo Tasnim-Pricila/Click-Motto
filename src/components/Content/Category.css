@@ -1,3 +1,24 @@
 .ant-card-body{
     padding: 0 !important;
 }
+
+.category-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+@media only screen and (max-width: 576px) {
+    .category-container{
+        grid-template-columns: auto;
+    }
+}
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .category-container{
+        grid-template-columns: auto auto;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .category-container{
+        grid-template-columns: auto auto auto;
+    }
+}
