@@ -1,0 +1,9 @@
+.ant-popover-content p {
+    margin: 0;
+  }
+  .ant-popover-inner {
+    padding: 0 !important;
+  }
+  .ant-popover-arrow:before {
+    background: black !important;
+  }
